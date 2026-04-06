@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/Hyuk-II/Go_basic/accounts"
 )
@@ -12,5 +13,12 @@ func main() {
 	fmt.Println(account)
 
 	account.Deposit(10)
-	fmt.Println(account.Balance())
+	fmt.Println(account)
+
+	err := account.WithDraw(10)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	fmt.Println(account)
 }
